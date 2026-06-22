@@ -6,7 +6,7 @@
 📧 **Email:** nethunavo24@gmail.com  
 💼 **LinkedIn:** https://www.linkedin.com/in/nethmini-jayamani-546599313  
 🌐 **Portfolio:** https://nethunavo.github.io/My-Portfolio/  
-🔗 **Linktree:** https://linktr.ee/nethu_n_
+🔗 [Linktree](https://linktr.ee/nethu_n_)
 
 ---
 
