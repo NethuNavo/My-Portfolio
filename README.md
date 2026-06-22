@@ -2,11 +2,11 @@
 
 **👩‍💻 Software Engineer | 🥋 Karate Champion | 🔬 Researcher**
 
-📍 Kalutara, Sri Lanka
-📧 [nethunavo24@gmail.com](mailto:nethunavo24@gmail.com)
-💼 LinkedIn: https://www.linkedin.com/in/nethmini-jayamani-546599313
-🌐 Portfolio: https://nethunavo.github.io/My-Portfolio/
-🔗 Linktree: https://linktr.ee/nethu_n_
+📍 **Location:** Kalutara, Sri Lanka  
+📧 **Email:** nethunavo24@gmail.com  
+💼 **LinkedIn:** https://www.linkedin.com/in/nethmini-jayamani-546599313  
+🌐 **Portfolio:** https://nethunavo.github.io/My-Portfolio/  
+🔗 **Linktree:** https://linktr.ee/nethu_n_
 
 ---
 
