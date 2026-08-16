@@ -62,7 +62,7 @@
         }
 
         .nav-container {
-            max-width: 1200px;
+            max-width: 1320px;
             margin: 0 auto;
             padding: 0 2rem;
             display: flex;
@@ -83,14 +83,16 @@
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2rem;
-            flex-wrap: wrap;
+            gap: 1.5rem;
+            flex-wrap: nowrap;
         }
 
         .nav-links a {
             color: var(--text-light);
             text-decoration: none;
             font-weight: 500;
+            font-size: 0.95rem;
+            white-space: nowrap;
             transition: all 0.3s ease;
             position: relative;
         }
@@ -658,9 +660,10 @@
 
         /* ============================================= */
         /* Tablet & below: collapse nav into hamburger    */
-        /* (8 nav items don't comfortably fit on tablets) */
+        /* (9 nav items don't comfortably fit on tablets  */
+        /* or narrower desktop windows)                   */
         /* ============================================= */
-        @media (max-width: 1024px) {
+        @media (max-width: 1300px) {
             .nav-links {
                 position: fixed;
                 top: 0;
@@ -726,7 +729,7 @@
         /* ============================================= */
         /* Tablet range fine-tuning                       */
         /* ============================================= */
-        @media (max-width: 1024px) and (min-width: 481px) {
+        @media (max-width: 1300px) and (min-width: 481px) {
             .section {
                 padding-top: 4.5rem;
                 padding-bottom: 4.5rem;
@@ -895,7 +898,7 @@
         }
 
         /* Landscape phones / small height screens: avoid the fullscreen nav overlay clipping */
-        @media (max-height: 480px) and (max-width: 1024px) {
+        @media (max-height: 480px) and (max-width: 1300px) {
             .nav-links {
                 justify-content: flex-start;
                 padding-top: 5rem;
