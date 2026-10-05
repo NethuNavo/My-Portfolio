@@ -1519,7 +1519,7 @@
         <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
             <p>&copy; 2025 Nethmini Jayamani. All rights reserved.</p>
             <p style="margin-top: 0.5rem; font-size: 0.9rem;">Designed with ❤️ and built with modern web technologies</p>
-            <p id="view-counter" style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--primary-color);">
+            <p id="view-counter" style="display:none; margin-top: 0.75rem; font-size: 0.85rem; color: var(--primary-color);">
                 <i class="fas fa-eye"></i> <span id="view-count-number">Loading views...</span>
             </p>
         </div>
@@ -1655,20 +1655,40 @@
             }, 3000);
         }
 
-        // Portfolio view counter (uses the free CountAPI-compatible service, no backend needed)
-        (function() {
-            const counterEl = document.getElementById('view-count-number');
-            if (!counterEl) return;
-            const key = 'nethmini-jayamani-portfolio-views';
-            fetch(`https://countapi.mileshilliard.com/api/v1/hit/${key}`)
-                .then(response => response.json())
-                .then(data => {
-                    counterEl.textContent = `${Number(data.value).toLocaleString()} Portfolio Views`;
-                })
-                .catch(() => {
-                    counterEl.textContent = 'Views unavailable';
-                });
-        })();
+          // Portfolio view counter - visible ONLY to the owner
+   (function() {
+       const OWNER_SECRET = 'nethu-k7x92-2026';
+       const OWNER_FLAG = 'nethmini-portfolio-owner';
+
+       try {
+           const param = new URLSearchParams(window.location.search).get('owner');
+           if (param === OWNER_SECRET) localStorage.setItem(OWNER_FLAG, '1');
+           if (param === 'off') localStorage.removeItem(OWNER_FLAG);
+       } catch (e) {}
+
+       let isOwner = false;
+       try { isOwner = localStorage.getItem(OWNER_FLAG) === '1'; } catch (e) {}
+
+       const counterWrap = document.getElementById('view-counter');
+       const counterEl = document.getElementById('view-count-number');
+       if (!counterEl) return;
+
+       const key = 'nethmini-jayamani-portfolio-views';
+       fetch(`https://countapi.mileshilliard.com/api/v1/hit/${key}`)
+           .then(response => response.json())
+           .then(data => {
+               if (isOwner && counterWrap) {
+                   counterEl.textContent = `${Number(data.value).toLocaleString()} Portfolio Views`;
+                   counterWrap.style.display = 'block';
+               }
+           })
+           .catch(() => {
+               if (isOwner && counterWrap) {
+                   counterEl.textContent = 'Views unavailable';
+                   counterWrap.style.display = 'block';
+               }
+           });
+   })();
     </script>
 </body>
 </html>
